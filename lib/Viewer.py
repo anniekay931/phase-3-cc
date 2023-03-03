@@ -1,9 +1,9 @@
 class Viewer:
-    
+
     def __init__(self, username):
-        self._username = None
-        self.set_username(username)
+        self._username = username
         self._reviews = []
+        self.reviewed_movies = []
     
     @property
     def username(self):
@@ -28,5 +28,6 @@ class Viewer:
     def rate_movie(self, movie, rating):
         if self.reviewed_movie(movie):
             raise ValueError("Viewer has already reviewed this movie")
-        review = Review(viewer=self, movie=movie, rating=rating)
+        review = Review(viewer=self,
+        movie=movie, rating=rating)
         self._reviews.append(review)

@@ -1,14 +1,18 @@
 from viewer import Viewer
+from movie import Movie
 
 class Review:
-
     def __init__(self, rating, viewer, movie):
-        self._rating = None
-        self._viewer = None
-        self._movie = None
-        self.set_rating(rating)
-        self.set_viewer(viewer)
-        self.set_movie(movie)
+        self.movie = movie
+        self.viewer = viewer
+        self.rating = rating
+
+        if not isinstance(self.rating, int) or self.rating < 1 or self.rating > 5:
+            raise ValueError("Rating must be an integer between 1 and 5, inclusive.")
+        if not isinstance(self.viewer, Viewer):
+            raise TypeError("Viewer must be an instance of the Viewer class.")
+        if not isinstance(self.movie, Movie):
+            raise TypeError("Movie must be an instance of the Movie class.")
 
     def get_rating(self):
         return self._rating
@@ -33,6 +37,8 @@ class Review:
         if not isinstance(new_movie, Movie):
             raise TypeError("Movie must be an instance of Movie class")
         self._movie = new_movie
-        new_movie.add_review(self)
+        new_movie.reviews.append(self)
+
+
 
 
