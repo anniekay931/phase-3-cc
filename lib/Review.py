@@ -1,10 +1,12 @@
+from viewer import Viewer
 
 class Review:
 
     def __init__(self, rating, viewer, movie):
-        self._rating = rating
+        self._rating = None
         self._viewer = None
         self._movie = None
+        self.set_rating(rating)
         self.set_viewer(viewer)
         self.set_movie(movie)
 

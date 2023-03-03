@@ -5,6 +5,7 @@ class Viewer:
         self.set_username(username)
         self._reviews = []
     
+    @property
     def username(self):
         return self._username
     
@@ -14,6 +15,7 @@ class Viewer:
         else:
             raise ValueError("Username must be a unique string between 6 and 16 characters")
     
+    @property
     def reviews(self):
         return self._reviews
     
