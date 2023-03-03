@@ -1,5 +1,3 @@
-from viewer import Viewer
-from movie import Movie
 
 class Review:
 
@@ -33,4 +31,6 @@ class Review:
         if not isinstance(new_movie, Movie):
             raise TypeError("Movie must be an instance of Movie class")
         self._movie = new_movie
+        new_movie.add_review(self)
+
 

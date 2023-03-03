@@ -20,7 +20,7 @@ class Movie:
         return self._reviews
     
     def reviewers(self):
-        return [review.viewer() for review in self._reviews]
+        return self._reviewers
     
     def average_rating(self):
         if not self.reviews:
