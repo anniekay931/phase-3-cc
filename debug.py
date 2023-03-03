@@ -5,10 +5,8 @@ import ipdb;
 if __name__ == '__main__':
 #  WRITE YOUR TEST CODE HERE ###
 
-
-
-
-
+    m = Movie("The Matrix")
+    print(m.title())
 
 
 
