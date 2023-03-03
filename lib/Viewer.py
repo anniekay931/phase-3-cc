@@ -28,6 +28,7 @@ class Viewer:
     def rate_movie(self, movie, rating):
         if self.reviewed_movie(movie):
             raise ValueError("Viewer has already reviewed this movie")
-        review = Review(viewer=self,
-        movie=movie, rating=rating)
+        review = Review(rating=rating, viewer=self, movie=movie)
         self._reviews.append(review)
+        movie.reviews.append(rating)
+        movie.reviewers.append(self)
